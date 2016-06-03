@@ -1,0 +1,54 @@
+---
+output: 
+  md_document:
+    dev: svg
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center" ,
+                      fig.width = 5, fig.height = 4)
+```
+
+### Aufgabe 1.2
+
+Im Rahmen einer Studie zum Thema "Gesundheit und Studium" wurden 150 Studenten 
+über die Häufigkeit ihrer sportlichen Betätigung, gemessen in Studen pro Monat
+befragt. Das Ergebnis der Befragung wird durch folgende *empirische 
+Verteilungsfunktion* wiedergegeben.
+
+```{r}
+library(ggplot2)
+d <- data.frame(x = c(0, 10, 25, 35, 60),
+                y = c(0, 0.1, 0.6, 0.9, 1))
+
+ggplot(d, aes(x, y)) +
+  geom_line() +
+  scale_x_continuous(breaks = d$x) +
+  scale_y_continuous(breaks = seq(0, 1, 0.1 )) +
+  labs(x = "Stunden pro Woche", y = "F(x)")
+```
+
+#### Frage 1
+
+Bestimmen Sie die relativen Häufigkeiten (\\(p_j\\)) der vier Klassen 
+\\(j = 1, \dots, 4\\).
+
+#### Frage 2
+
+Welche der folgenden Aussagen ist richtig
+
+  - A: Das 30%-Quantil wird von 30% der Beobachtungen überschritten. 
+  - B: 70% der Beobachtungen nehmen einen Wert an, der mindestens so groß wie
+    das 30% Quantil ist.
+  - C: Das 30% Quantil wird von 30% der Beobachtungen unterschritten.
+  - D: In dieser Stichprobe nimmt das 30% Quantil einen Wert von 45 ($=0,3*150$) an.
+  - E: Das 30% Quantil ist stets kleiner als der Median.
+
+#### Frage 3
+
+In welcher Klasse befindet sich das 30% Quantil?
+
+  - A: [0 - 10[
+  - B: [10 - 25[
+  - C: [25 - 35[
+  - D: [35 - 60]

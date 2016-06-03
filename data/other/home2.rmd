@@ -1,0 +1,19 @@
+---
+output: 
+  md_document:
+    dev: svg
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Impressum
+
+Manuel Steiner  
+Wissenschaftlicher Mitarbeiter am  
+Lehrstuhl für Ökonometrie  
+Sandering 2  
+97070 Würzburg  
+
+
