@@ -17,5 +17,5 @@ server <- function(input, output) {
     withMathJax(includeMarkdown("data/other/Aufgabe1_2.md"))
   })
   
-  callModule(exerciseCreate, "häufigA1", path = "data/exercises/ass4.csv")
+  callModule(createExercise, "häufigA1", path = "data/exercises/ass4.csv")
 }

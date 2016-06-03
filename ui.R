@@ -38,22 +38,22 @@ ui <- dashboardPage(
         ) # END fluidRow
       ), # END tabItem "home"
       
-      tabItem(
-        tabName = "grundA1",
-        fluidRow(
-          box(width = 8, uiOutput("grund")),
-          box(width = 4, uiOutput("grundA1_2"))
-        )
-      ),
+      # tabItem(
+      #   tabName = "grundA1",
+      #   fluidRow(
+      #     box(width = 8, uiOutput("grund")),
+      #     box(width = 4, uiOutput("grundA1_2"))
+      #   )
+      # ),
+      # 
+      # tabItem(
+      #   tabName = "grundA2",
+      #   fluidRow(
+      #     box(width = 8, tableOutput("text1"))
+      #   )
+      # ),
       
-      tabItem(
-        tabName = "grundA2",
-        fluidRow(
-          box(width = 8, tableOutput("text1"))
-        )
-      ),
-      
-      exerciseCreateUI("häufigA1")
+      createExerciseUI("häufigA1")
     ) # END tabItems
   ) # END dashboardBody
 ) # END dashboardPage
