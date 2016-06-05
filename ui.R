@@ -1,8 +1,13 @@
 ## app.R ##
+
 library(shinydashboard)
+library(ggplot2)
+library(readr)
+library(dplyr)
 
-source("modules.r")
+source("modules.r", encoding = "utf8")
 
+### User Interface -------------------------------------------------------------
 ui <- dashboardPage(
   
   dashboardHeader(title = "Übungsaufgaben: Ökonometrie 1", titleWidth = 400),
@@ -35,25 +40,23 @@ ui <- dashboardPage(
         fluidRow(
           box(width = 8, uiOutput("home1")),
           box(width = 4, uiOutput("home2"))
-        ) # END fluidRow
+        ), # END fluidRow
+        
+        fluidRow(
+          box(width = 8,
+              helpText("You have won a million dollar bitch"),
+              valueBoxOutput("progressBox"),
+              valueBoxOutput("progressBox2"))
+        )
       ), # END tabItem "home"
       
-      # tabItem(
-      #   tabName = "grundA1",
-      #   fluidRow(
-      #     box(width = 8, uiOutput("grund")),
-      #     box(width = 4, uiOutput("grundA1_2"))
-      #   )
-      # ),
-      # 
-      # tabItem(
-      #   tabName = "grundA2",
-      #   fluidRow(
-      #     box(width = 8, tableOutput("text1"))
-      #   )
-      # ),
+      createExerciseUI("grundA1", path = path_grundA1),
+      createExerciseUI("grundA2", path = path_grundA2),
+      createExerciseUI("grundA3", path = path_grundA3),
       
-      createExerciseUI("häufigA1")
+      createExerciseUI("häufigA1", path = path_häufigA1),
+      createExerciseUI("häufigA2", path = path_häufigA2),
+      createExerciseUI("häufigA3", path = path_häufigA3)
     ) # END tabItems
   ) # END dashboardBody
 ) # END dashboardPage
